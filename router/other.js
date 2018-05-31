@@ -23,6 +23,24 @@ other.get('/getUserInfo', async (ctx, next) => {
     // ctx.set('Access-Control-Allow-Origin','*')
     ctx.body = result;
 })
+
+other.post('/getUserInfo', async (ctx, next) => {
+    let result = {
+        "userId": "26727",
+        "logonName": "admin",
+        "userName": "学海教育",
+        "userType": "8",
+        "schoolId": "3638",
+        "isStaff": false,
+        "depId": [],
+        "depTag": [],
+        "depName": [],
+        "verifyPhone": true,
+        "schoolName": "舟山市普陀第二中学"
+    }
+    ctx.type = 'application/json; charset=utf-8'
+    ctx.body = result;
+})
 other.get('/getSchoolPower', async (ctx, next) => {
     let result = {},
         count = 10;

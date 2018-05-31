@@ -2,8 +2,8 @@ const Router = require('koa-router')
 const config = new Router();
 
 config.get('/', async (ctx, next) => {
-        ctx.body = "config index"
-    })
+    ctx.body = "config index"
+})
     .get('/getConfigByName/:type', async (ctx, next) => {
         let type = ctx.params.type;
         let result;
@@ -22,6 +22,11 @@ config.get('/', async (ctx, next) => {
             case 'schoolManage':
                 result = {
                     url: 'http://localhost:3000/ctype'
+                }
+                break;
+            case 'knowledge':
+                result = {
+                    url: 'http://192.168.5.61:17086/'//杨毅地址
                 }
                 break;
             default:
