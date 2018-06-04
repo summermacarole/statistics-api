@@ -24,7 +24,7 @@ config.get('/', async (ctx, next) => {
                     url: 'http://localhost:3000/ctype'
                 }
                 break;
-            case 'knowledge':
+            case 'bigData':
                 result = {
                     url: 'http://192.168.5.61:17086/'//杨毅地址
                 }
