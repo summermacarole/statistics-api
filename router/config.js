@@ -26,7 +26,8 @@ config.get('/', async (ctx, next) => {
                 break;
             case 'bigData':
                 result = {
-                    url: 'http://192.168.5.61:17086/'//杨毅地址
+                    // url: 'http://192.168.5.61:17086/'//杨毅地址
+                    url: 'http://localhost:3000/bigData'//杨毅地址
                 }
                 break;
             default:

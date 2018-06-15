@@ -56,7 +56,7 @@ other.post('/transferInterface', async (ctx, next) => {
     ctx.status = 301
     ctx.redirect(url)
     console.log(ctx.request.body)
-    ctx.body = "我是 一个中专接口"
+    // ctx.body = "我是 一个中专接口"
 })
 
 module.exports = other;
