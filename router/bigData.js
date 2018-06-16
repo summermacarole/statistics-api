@@ -174,9 +174,9 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
         result['student']['stu-' + i] = '张三' + i
     }
 
-    let tree = [], firstLevelLen = 5;
-    for (let a = 0; a < firstLevelLen; a++) {
-        let firstLevels = {
+    let tree = [], firstLevelLen = 4;
+    for (let a = 1; a <= firstLevelLen; a++) {
+        let currentFirstLevel = {
             "children": [],
             "classData": {
                 "fortyUserNum": Math.ceil(Math.random() * 100),
@@ -190,40 +190,69 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                     "张三4"
                 ]
             },
-            "knowledegeId": 1,
-            "knowledegeName": "知识点1",
-            "knowledegeLevelId": 0,
-            "learnDay": 0,
+            "knowledegeId": a,
+            "knowledegeName": "一级知识点" + a,
+            "knowledegeLevelId": 1,
+            "parentKnowledegeId": 0,
+            "learnDay": Math.ceil(Math.random() * 10000000),
             "mastery": Math.ceil(Math.random() * 100),
-            "parentKnowledegeId": 1,
             "parentMastery": Math.ceil(Math.random() * 100)
         }
-        tree.push(firstLevels)
-        let secondLevelLen = Math.ceil(Math.random() * (firstLevelLen + 1));
-        for (let b = 0; b < secondLevelLen; b++) {
-            let secendLevels = {
-                "children": [],
-                "classData": {
-                    "fortyUserNum": Math.ceil(Math.random() * 100),
-                    "lessFortyUserNum": Math.ceil(Math.random() * 100),
-                    "seventhFiveUserNum": Math.ceil(Math.random() * 100),
-                    "sixtyUserNum": Math.ceil(Math.random() * 100),
-                    "weakStudent": [
-                        "张三1",
-                        "张三2",
-                        "张三3",
-                        "张三4"
-                    ]
-                },
-                "knowledegeId": 1,
-                "knowledegeName": "知识点1",
-                "knowledegeLevelId": 1,
-                "learnDay": 0,
-                "mastery": Math.ceil(Math.random() * 100),
-                "parentKnowledegeId": 1,
-                "parentMastery": Math.ceil(Math.random() * 100)
+        tree.push(currentFirstLevel)
+        if (currentFirstLevel['children']) {
+            let secondLevelLen = Math.ceil(Math.random() * (firstLevelLen + 1));
+            for (let b = 1; b <= secondLevelLen; b++) {
+                let currentSecondLevel = {
+                    "children": [],
+                    "classData": {
+                        "fortyUserNum": Math.ceil(Math.random() * 100),
+                        "lessFortyUserNum": Math.ceil(Math.random() * 100),
+                        "seventhFiveUserNum": Math.ceil(Math.random() * 100),
+                        "sixtyUserNum": Math.ceil(Math.random() * 100),
+                        "weakStudent": [
+                            "张三1",
+                            "张三2",
+                            "张三3",
+                            "张三4"
+                        ]
+                    },
+                    "knowledegeId": '' + a + b,
+                    "knowledegeName": "二级知识点" + b,
+                    "knowledegeLevelId": 2,
+                    "parentKnowledegeId": a,
+                    "learnDay": Math.ceil(Math.random() * 10000000),
+                    "mastery": Math.ceil(Math.random() * 100),
+                    "parentMastery": Math.ceil(Math.random() * 100)
+                }
+                currentFirstLevel['children'].push(currentSecondLevel)
+                if (currentSecondLevel['children']) {
+                    let thirdLevelLen = Math.ceil(Math.random() * (secondLevelLen + 1));
+                    for (let c = 1; c <= thirdLevelLen; c++) {
+                        let currentThirdLevel = {
+                            "classData": {
+                                "fortyUserNum": Math.ceil(Math.random() * 100),
+                                "lessFortyUserNum": Math.ceil(Math.random() * 100),
+                                "seventhFiveUserNum": Math.ceil(Math.random() * 100),
+                                "sixtyUserNum": Math.ceil(Math.random() * 100),
+                                "weakStudent": [
+                                    "张三1",
+                                    "张三2",
+                                    "张三3",
+                                    "张三4"
+                                ]
+                            },
+                            "knowledegeId": '' + a + b + c,
+                            "knowledegeName": "三级知识点" + c,
+                            "knowledegeLevelId": 3,
+                            "parentKnowledegeId": '' + a + b,
+                            "learnDay": Math.ceil(Math.random() * 10000000),
+                            "mastery": Math.ceil(Math.random() * 100),
+                            "parentMastery": Math.ceil(Math.random() * 100)
+                        }
+                        currentSecondLevel['children'].push(currentThirdLevel)
+                    }
+                }
             }
-            firstLevels['children'].push(secendLevels)
         }
     }
     result['knowledgeTree'] = tree;
