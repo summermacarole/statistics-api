@@ -168,8 +168,17 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
             "knowledegeName": "知识点一-" + i,
             "mastery": Math.ceil(Math.random() * 100)
         })
+        result['twoWeakKnowledge'].push({
+            "knowledegeId": Math.ceil(Math.random() * 20),
+            "knowledegeName": "知识点二-" + i,
+            "mastery": Math.ceil(Math.random() * 100)
+        })
+        result['threeWeakKnowledge'].push({
+            "knowledegeId": Math.ceil(Math.random() * 20),
+            "knowledegeName": "知识点三-" + i,
+            "mastery": Math.ceil(Math.random() * 100)
+        })
     }
-    result['twoWeakKnowledge'] = result['threeWeakKnowledge'] = result['oneWeakKnowledge']
     for (let i = 0; i < 30; i++) {
         let rand = Math.ceil(Math.random() * 10001);
         result['student']['stu-' + rand] = '张三' + rand
