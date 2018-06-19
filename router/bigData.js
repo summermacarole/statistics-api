@@ -204,7 +204,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
             "knowledegeName": "一级知识点" + a,
             "knowledegeLevelId": 1,
             "parentKnowledegeId": 0,
-            "learnDay": Math.ceil(Math.random() * 10000000),
+            "learnDay": '201806' + Math.ceil(Math.random() * 31 + 1),
             "mastery": Math.ceil(Math.random() * 100),
             "parentMastery": Math.ceil(Math.random() * 100)
         }
@@ -230,7 +230,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                     "knowledegeName": "二级知识点" + b,
                     "knowledegeLevelId": 2,
                     "parentKnowledegeId": a,
-                    "learnDay": Math.ceil(Math.random() * 10000000),
+                    "learnDay": '201806' + Math.ceil(Math.random() * 31 + 1),
                     "mastery": Math.ceil(Math.random() * 100),
                     "parentMastery": Math.ceil(Math.random() * 100)
                 }
@@ -255,7 +255,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                             "knowledegeName": "三级知识点" + c,
                             "knowledegeLevelId": 3,
                             "parentKnowledegeId": '' + a + b,
-                            "learnDay": Math.ceil(Math.random() * 10000000),
+                            "learnDay": '201806' + Math.ceil(Math.random() * 31 + 1),
                             "mastery": Math.ceil(Math.random() * 100),
                             "parentMastery": Math.ceil(Math.random() * 100)
                         }
