@@ -268,4 +268,13 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
     result['knowledgeTree'] = tree;
     ctx.body = result
 })
+bigData.get('/api/v1/xueqing/historyMastery', async (ctx, next) => {
+    let result = [
+        {
+            "mastery": 0,
+            "statisDay": 0
+        }
+    ];
+    ctx.body = result;
+})
 module.exports = bigData;
