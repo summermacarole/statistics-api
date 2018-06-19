@@ -171,7 +171,8 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
     }
     result['twoWeakKnowledge'] = result['threeWeakKnowledge'] = result['oneWeakKnowledge']
     for (let i = 0; i < 30; i++) {
-        result['student']['stu-' + i] = '张三' + i
+        let rand = Math.ceil(Math.random() * 10001);
+        result['student']['stu-' + rand] = '张三' + rand
     }
 
     let tree = [], firstLevelLen = 4;
