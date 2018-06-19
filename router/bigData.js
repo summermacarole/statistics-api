@@ -269,12 +269,14 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
     ctx.body = result
 })
 bigData.get('/api/v1/xueqing/historyMastery', async (ctx, next) => {
-    let result = [
-        {
-            "mastery": 0,
-            "statisDay": 0
-        }
-    ];
+    let result = [];
+    for (let i = 0; i < 20; i++) {
+        let index = i + 1;
+        result.push({
+            "mastery": Math.ceil(Math.random() * 101),
+            "statisDay": '201806' + (index >= 10 ? index : '0' + index)
+        })
+    }
     ctx.body = result;
 })
 module.exports = bigData;
