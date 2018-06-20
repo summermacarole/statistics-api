@@ -191,6 +191,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
             "classData": {
                 "fortyUserNum": Math.ceil(Math.random() * 100),
                 "lessFortyUserNum": Math.ceil(Math.random() * 100),
+                "lastWeekMastery": Math.ceil(Math.random() * 100),
                 "seventhFiveUserNum": Math.ceil(Math.random() * 100),
                 "sixtyUserNum": Math.ceil(Math.random() * 100),
                 "weakStudent": [
@@ -218,6 +219,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                         "fortyUserNum": Math.ceil(Math.random() * 100),
                         "lessFortyUserNum": Math.ceil(Math.random() * 100),
                         "seventhFiveUserNum": Math.ceil(Math.random() * 100),
+                        "lastWeekMastery": Math.ceil(Math.random() * 100),
                         "sixtyUserNum": Math.ceil(Math.random() * 100),
                         "weakStudent": [
                             "张三1",
@@ -243,6 +245,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                                 "fortyUserNum": Math.ceil(Math.random() * 100),
                                 "lessFortyUserNum": Math.ceil(Math.random() * 100),
                                 "seventhFiveUserNum": Math.ceil(Math.random() * 100),
+                                "lastWeekMastery": Math.ceil(Math.random() * 100),
                                 "sixtyUserNum": Math.ceil(Math.random() * 100),
                                 "weakStudent": [
                                     "张三1",

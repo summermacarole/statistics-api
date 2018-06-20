@@ -17,11 +17,10 @@
       <file leaf-file-name="bigData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/bigData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+            <state relative-caret-position="536">
+              <caret line="252" column="30" lean-forward="true" selection-start-line="252" selection-start-column="30" selection-end-line="252" selection-end-column="30" />
               <folding>
                 <element signature="e#224#6949#0" />
-                <element signature="e#7044#11670#0" />
               </folding>
             </state>
           </provider>
@@ -149,10 +148,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39343000" />
+    <option name="totallyTimeSpent" value="40122000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0828125" />
@@ -163,7 +162,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32980973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4640592" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4640592" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -282,7 +281,6 @@
           <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
           <folding>
             <element signature="e#224#6949#0" />
-            <element signature="e#7044#11670#0" />
           </folding>
         </state>
       </provider>
@@ -569,11 +567,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/bigData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+        <state relative-caret-position="536">
+          <caret line="252" column="30" lean-forward="true" selection-start-line="252" selection-start-column="30" selection-end-line="252" selection-end-column="30" />
           <folding>
             <element signature="e#224#6949#0" />
-            <element signature="e#7044#11670#0" />
           </folding>
         </state>
       </provider>
