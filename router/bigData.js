@@ -154,7 +154,7 @@ bigData.get('/api/v1/xueqing/selectTree', async (ctx, next) => {
 bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
     console.log('转过来的接口')
     let result = {
-        "knowledgeRate": Math.ceil(Math.random() * 100),//已学习知识点占比
+        "knowledgeRate": Math.random() * 100,//已学习知识点占比
         "knowledgeTree": [],//知识点树
         "oneWeakKnowledge": [],
         "student": {},
@@ -201,7 +201,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                     "张三4"
                 ]
             },
-            "knowledegeId": a,
+            "knowledegeId": a + '',
             "knowledegeName": "一级知识点" + a,
             "knowledegeLevelId": 1,
             "parentKnowledegeId": 0,
