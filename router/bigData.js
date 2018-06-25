@@ -269,6 +269,18 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
         }
     }
     result['knowledgeTree'] = tree;
+    //
+    // result['knowledgeTree'] = [
+    //     {
+    //         "knowledegeId": 110706,
+    //         "knowledegeName": "图形的初步认识",
+    //         "parentKnowledegeId": 0,
+    //         "knowledegeLevelId": 1,
+    //         "mastery": 19.7,
+    //         "parentMastery": 7.7,
+    //         "learnDay": 20180604
+    //     }
+    // ]
     ctx.body = result
 })
 bigData.get('/api/v1/xueqing/historyMastery', async (ctx, next) => {
