@@ -38,6 +38,16 @@ bigData.get('/api/v1/xueqing/getClass', async ctx => {
     }
     ctx.body = result;
 })
+bigData.get('/api/v1/xueqing/getApp', async ctx => {
+    let result = {
+        select: [
+            {id: '001', value: '刷题王1'},
+            {id: '002', value: '刷题王2'},
+            {id: '003', value: '刷题王3'},
+        ]
+    }
+    ctx.body = result;
+})
 bigData.get('/api/v1/xueqing/homework', async ctx => {
     let result = {
         "assginQstNum": 15433,
@@ -56,32 +66,151 @@ bigData.get('/api/v1/xueqing/argScore', async ctx => {
         "lastWeekStart": "20180618",
         "lastWeekEnd": "20180624",
         "thisWeekScore": {"1": 50, "3": 20},
-        "lastWeekScore": {"1": 23,"2":40},
+        "lastWeekScore": {"1": 23, "2": 40},
         "teacherMicroCourseCount": {"1": 10, "2": 20, "3": 45, "4": 12, "5": 22, "6": 36},
         "zhitongketang": 0.0
     }
     ctx.body = result;
 })
+
+bigData.get('/api/v1/xueqing/learnSummary', async ctx => {
+    let result = {
+        "qstNum": 56,
+        "selfWorkRate": 1.0,
+        "handInQstNum": 56,
+        "rightQstRate": 0.9642857142857143,
+        "classQstNum": [{"className": "702", "qstNum": 14, "selfWorkNum": 14, "selfWorkRate": 1.0, "handInQstNum": 14, "rightQstNum": 12, "rightQstRate": 0.8571428571428571}, {
+            "className": "703",
+            "qstNum": 0,
+            "selfWorkNum": 0,
+            "selfWorkRate": 0.0,
+            "handInQstNum": 0,
+            "rightQstNum": 0,
+            "rightQstRate": 0.0
+        }, {"className": "704", "qstNum": 0, "selfWorkNum": 0, "selfWorkRate": 0.0, "handInQstNum": 0, "rightQstNum": 0, "rightQstRate": 0.0}, {
+            "className": "707",
+            "qstNum": 42,
+            "selfWorkNum": 42,
+            "selfWorkRate": 1.0,
+            "handInQstNum": 42,
+            "rightQstNum": 42,
+            "rightQstRate": 1.0
+        }]
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/read', async ctx => {
+    let result = [
+        {artitleName: '华夏上下五千年', userNum: 150},
+        {artitleName: '美国历史', userNum: 300},
+        {artitleName: '致青春', userNum: 400},
+        {artitleName: '二战风云录', userNum: 150},
+        {artitleName: '十万个为什么', userNum: 200}
+    ];
+    ctx.body = result;
+})
+
 bigData.get('/api/v1/xueqing/activeDegree', async ctx => {
     let result = {
-        "schoolName": "杭州绿城育华学校",
-        "totolNum": 0,
-        "teaNum": 0,
-        "totalStuNum": 0,
-        "dayNum": 0,
-        "dayTeaNum": 0,
-        "dayStuNum": 0,
-        "rate": 0.0,
-        "sevenRate": 0,
-        "eightRate": 0,
-        "nineRate": 0,
-        "sevenNum": [0, 0, 0, 0, 0, 1940, 0],
-        "eightNum": [0, 0, 0, 0, 0, 1754, 0],
-        "nineNum": [0, 0, 0, 0, 0, 96, 0],
-        "schoolTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
-        "sevenGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
-        "eightGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
-        "nineGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []}
+        "totolNum": 875,
+        "teaNum": 75,
+        "totalStuNum": 800,
+        "dayNum": 353,
+        "dayTeaNum": 53,
+        "dayStuNum": 300,
+        "rate": 0.6,
+        "sevenRate": 335,
+        "eightRate": 310,
+        "nineRate": 234,
+        "sevenNum": [120, 132, 101, 134, 90, 230, 210],
+        "eightNum": [220, 182, 191, 234, 290, 330, 310],
+        "nineNum": [150, 232, 201, 154, 190, 330, 410],
+        "schoolTopFive": {
+            className: ['701', '702', '703', '704', '705'],
+            stuActiveRate: [12, 44, 34, 56, 23],
+            teaActiveRate: [42, 75, 15, 35, 65]
+        },
+        "sevenGradeTopFive": [
+            {
+                "className": "705",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "710",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "701",
+                "stuActiveRate": 98,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "702",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "706",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            }
+        ],
+        "eightGradeTopFive": [
+            {
+                "className": "705",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "710",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "701",
+                "stuActiveRate": 98,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "702",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "706",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            }
+        ],
+        "nineGradeTopFive": [
+            {
+                "className": "705",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "710",
+                "stuActiveRate": 100,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "701",
+                "stuActiveRate": 98,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "702",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            },
+            {
+                "className": "706",
+                "stuActiveRate": 95,
+                "teaActiveRate": 0
+            }
+        ]
     }
     ctx.body = result;
 })
