@@ -4,6 +4,87 @@ const bigData = new Router();
 bigData.get('/', async (ctx, next) => {
     ctx.body = "bigData index"
 })
+bigData.get('/api/v1/xueqing/getSchoolPeriod', async ctx => {
+    let result = {
+        "select": [
+            {"id": "1", value: '小学'},
+            {"id": "2", "value": "初中 "}
+        ]
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/getGrade', async ctx => {
+    let result = {
+        "select": [
+            {"id": "11", value: '一年级'},
+            {"id": "12", value: '二年级'},
+            {"id": "13", value: '三年级'},
+            {"id": "14", value: '四年级'},
+            {"id": "15", value: '五年级'},
+            {"id": "16", value: '六年级'},
+        ]
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/getClass', async ctx => {
+    let result = {
+        "select": [
+            {"id": "2212", "value": "701"},
+            {"id": "2214", "value": "703"},
+            {"id": "2220", "value": "709"},
+            {"id": "4854", "value": "804"},
+            {"id": "4855", "value": "805"},
+            {"id": "4856", "value": "806"}]
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/homework', async ctx => {
+    let result = {
+        "assginQstNum": 15433,
+        "assignHomeworkCount": 1134,
+        "correctHomeworkCount": 32476,
+        "subjectAssginQstNum": {"1": 1763, "2": 3864, "3": 1952, "4": 3769, "5": 3607, "6": 478},
+        "subjectAssignHomeworkCount": {"1": 227, "2": 284, "3": 164, "4": 212, "5": 217, "6": 30},
+        "subjectCorrectHomeworkCount": {"1": 7245, "2": 9766, "3": 3932, "4": 5993, "5": 4592, "6": 948}
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/argScore', async ctx => {
+    let result = {
+        "thisWeekStart": "20180625",
+        "thisWeekEnd": "20180629",
+        "lastWeekStart": "20180618",
+        "lastWeekEnd": "20180624",
+        "thisWeekScore": {"1": 50, "3": 20},
+        "lastWeekScore": {"1": 23,"2":40},
+        "teacherMicroCourseCount": {"1": 10, "2": 20, "3": 45, "4": 12, "5": 22, "6": 36},
+        "zhitongketang": 0.0
+    }
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/activeDegree', async ctx => {
+    let result = {
+        "schoolName": "杭州绿城育华学校",
+        "totolNum": 0,
+        "teaNum": 0,
+        "totalStuNum": 0,
+        "dayNum": 0,
+        "dayTeaNum": 0,
+        "dayStuNum": 0,
+        "rate": 0.0,
+        "sevenRate": 0,
+        "eightRate": 0,
+        "nineRate": 0,
+        "sevenNum": [0, 0, 0, 0, 0, 1940, 0],
+        "eightNum": [0, 0, 0, 0, 0, 1754, 0],
+        "nineNum": [0, 0, 0, 0, 0, 96, 0],
+        "schoolTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
+        "sevenGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
+        "eightGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []},
+        "nineGradeTopFive": {"className": [], "stuActiveRate": [], "teaActiveRate": []}
+    }
+    ctx.body = result;
+})
 bigData.get('/api/v1/xueqing/selectTree', async (ctx, next) => {
     let result = [
         {
