@@ -1,5 +1,6 @@
 const Router = require('koa-router')
 const bigData = new Router();
+const Utils = require('../util')
 
 bigData.get('/', async (ctx, next) => {
     ctx.body = "bigData index"
@@ -75,27 +76,16 @@ bigData.get('/api/v1/xueqing/argScore', async ctx => {
 
 bigData.get('/api/v1/xueqing/learnSummary', async ctx => {
     let result = {
-        "qstNum": 56,
+        "qstNum": 120,
         "selfWorkRate": 1.0,
         "handInQstNum": 56,
         "rightQstRate": 0.9642857142857143,
-        "classQstNum": [{"className": "702", "qstNum": 14, "selfWorkNum": 14, "selfWorkRate": 1.0, "handInQstNum": 14, "rightQstNum": 12, "rightQstRate": 0.8571428571428571}, {
-            "className": "703",
-            "qstNum": 0,
-            "selfWorkNum": 0,
-            "selfWorkRate": 0.0,
-            "handInQstNum": 0,
-            "rightQstNum": 0,
-            "rightQstRate": 0.0
-        }, {"className": "704", "qstNum": 0, "selfWorkNum": 0, "selfWorkRate": 0.0, "handInQstNum": 0, "rightQstNum": 0, "rightQstRate": 0.0}, {
-            "className": "707",
-            "qstNum": 42,
-            "selfWorkNum": 42,
-            "selfWorkRate": 1.0,
-            "handInQstNum": 42,
-            "rightQstNum": 42,
-            "rightQstRate": 1.0
-        }]
+        "classQstNum": [
+            {"className": "702", "qstNum": 30, "selfWorkNum": 14, "selfWorkRate": 1.0, "handInQstNum": 14, "rightQstNum": 12, "rightQstRate": 0.8571428571428571},
+            {"className": "703", "qstNum": 40, "selfWorkNum": 0, "selfWorkRate": 0.5, "handInQstNum": 0, "rightQstNum": 0, "rightQstRate": 0.0},
+            {"className": "704", "qstNum": 0, "selfWorkNum": 0, "selfWorkRate": 0.0, "handInQstNum": 0, "rightQstNum": 0, "rightQstRate": 0.0},
+            {"className": "707", "qstNum": 50, "selfWorkNum": 42, "selfWorkRate": 1.0, "handInQstNum": 42, "rightQstNum": 42, "rightQstRate": 1.0}
+        ]
     }
     ctx.body = result;
 })
@@ -109,6 +99,42 @@ bigData.get('/api/v1/xueqing/read', async ctx => {
     ];
     ctx.body = result;
 })
+
+/*应用概况*/
+bigData.get('/api/v1/xueqing/hotApp', async ctx => {
+    let result = []
+    ctx.body = result;
+})
+bigData.get('/api/v1/xueqing/realtimeDate', async ctx => {
+    let result = {
+        student: Utils.getRandomInteger(),
+        teacher: Utils.getRandomInteger(),
+        app: {
+            p01: {
+                student: Utils.getRandomInteger(),
+                teacher: Utils.getRandomInteger()
+            },
+            p02: {
+                teacher: Utils.getRandomInteger(),
+                student: Utils.getRandomInteger()
+            },
+            p03: {
+                teacher: Utils.getRandomInteger(),
+                student: Utils.getRandomInteger(),
+            },
+            p06: {
+                teacher: Utils.getRandomInteger(),
+                student: Utils.getRandomInteger(),
+            },
+            p05: {
+                teacher: Utils.getRandomInteger(),
+                student: Utils.getRandomInteger()
+            }
+        },
+    }
+    ctx.body = result;
+})
+
 
 bigData.get('/api/v1/xueqing/activeDegree', async ctx => {
     let result = {
@@ -368,7 +394,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
         "knowledgeTree": [],//知识点树
         "oneWeakKnowledge": [],
         "student": {},
-        "studentName": "张三1",
+        "studentName": "张三wsaqwdqwdqwdewe1",
         "threeWeakKnowledge": [],
         "twoWeakKnowledge": []
     }
@@ -391,7 +417,7 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
     }
     for (let i = 0; i < 30; i++) {
         let rand = Math.ceil(Math.random() * 10001);
-        result['student']['stu-' + rand] = '张三' + rand
+        result['student']['stu-' + rand] = '张我我弄爱唯欧能够问夫人浓缩能够为三' + rand
     }
 
     let tree = [], firstLevelLen = 4;
@@ -460,8 +486,9 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
                                 "weakStudent": [
                                     "张三1",
                                     "张三2",
-                                    "张三3",
-                                    "张三4"
+                                    "张三sdfswdfwsedfwwe3",
+                                    "张三4",
+                                    "张三5",
                                 ]
                             },
                             "knowledegeId": '' + a + b + c,
@@ -479,18 +506,6 @@ bigData.get('/api/v1/xueqing/knowledgeMapping', async (ctx, next) => {
         }
     }
     result['knowledgeTree'] = tree;
-    //
-    // result['knowledgeTree'] = [
-    //     {
-    //         "knowledegeId": 110706,
-    //         "knowledegeName": "图形的初步认识",
-    //         "parentKnowledegeId": 0,
-    //         "knowledegeLevelId": 1,
-    //         "mastery": 19.7,
-    //         "parentMastery": 7.7,
-    //         "learnDay": 20180604
-    //     }
-    // ]
     ctx.body = result
 })
 bigData.get('/api/v1/xueqing/historyMastery', async (ctx, next) => {
